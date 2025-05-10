@@ -6,7 +6,7 @@
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Turn.js depuis un CDN -->
+  <!-- Turn.js CDN -->
   <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@4/turn.min.js"></script>
 
   <style>
@@ -62,8 +62,10 @@
       font-size: 32px;
       color: #333;
       cursor: pointer;
-      z-index: 1000;
+      z-index: 9999; /* 🔥 bien au-dessus de tout */
       transition: background 0.3s;
+      user-select: none;
+      pointer-events: all; /* 🔥 évite que ce soit "désactivé" */
     }
 
     .arrow:hover {
@@ -88,10 +90,7 @@
 
   <!-- Livre -->
   <div id="flipbook">
-    <div class="page">
-      <h1>Gazette FR</h1>
-      <p>Cliquez sur la flèche → pour ouvrir le livre !</p>
-    </div>
+    <div class="page"><h1>Gazette FR</h1><p>Cliquez sur la flèche → pour ouvrir le livre !</p></div>
     <div class="page"></div>
     <div class="page"><h2>Chapitre 1</h2><p>Bienvenue dans le monde magique de Sky...</p></div>
     <div class="page"><h2>Chapitre 2</h2><p>Les secrets du royaume céleste vous attendent.</p></div>
@@ -101,7 +100,7 @@
 </div>
 
 <script>
-  window.addEventListener("load", function () {
+  $(document).ready(function () {
     const $flipbook = $('#flipbook');
 
     if (!$flipbook.data('turn')) {
@@ -127,3 +126,4 @@
 
 </body>
 </html>
+
