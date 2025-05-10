@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Gazette Book</title>
-  <script src="js/turn.min.js"></script>
   <style>
     body {
       background: #151d2e;
@@ -12,6 +11,7 @@
       align-items: center;
       height: 100vh;
       overflow: hidden;
+      margin: 0;
     }
 
     #flipbook {
@@ -27,6 +27,7 @@
       padding: 20px;
       font-family: sans-serif;
       box-sizing: border-box;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
@@ -39,18 +40,18 @@
   <div class="page">🕊️ Page 4<br><br>À bientôt dans les nuages !</div>
 </div>
 
+<!-- ✅ Load jQuery BEFORE turn.js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/turn.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    $("#flipbook").turn({
+    $('#flipbook').turn({
       width: 600,
       height: 400,
       autoCenter: true
     });
   });
 </script>
-
-<!-- jQuery is required for turn.js -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 </html>
