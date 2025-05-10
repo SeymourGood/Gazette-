@@ -100,7 +100,7 @@
 </div>
 
 <script>
-  $(document).ready(function () {
+  window.onload = function () {
     const $flipbook = $('#flipbook');
 
     if (!$flipbook.data('turn')) {
@@ -114,15 +114,16 @@
       });
     }
 
-    $('#next-page').on('click', function () {
+    document.getElementById('next-page').addEventListener('click', function () {
       $flipbook.turn('next');
     });
 
-    $('#prev-page').on('click', function () {
+    document.getElementById('prev-page').addEventListener('click', function () {
       $flipbook.turn('previous');
     });
-  });
+  };
 </script>
+
 
 </body>
 </html>
