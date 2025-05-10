@@ -2,56 +2,61 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Gazette Book</title>
+  <title>Gazette Flipbook</title>
 
-  <!-- Load jQuery FIRST -->
+  <!-- jQuery must come first -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Load Turn.js from your local file -->
+  <!-- Then Turn.js -->
   <script src="js/turn.min.js"></script>
 
   <style>
     body {
       margin: 0;
-      background: #1b2b47;
+      background: #0a132b;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden;
     }
 
     #flipbook {
-      width: 600px;
-      height: 400px;
+      width: 800px;
+      height: 500px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     }
 
     #flipbook .page {
-      width: 300px;
-      height: 400px;
+      width: 400px;
+      height: 500px;
       background: white;
       color: black;
-      font-family: sans-serif;
-      padding: 20px;
+      padding: 30px;
       box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
       border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
 
-<!-- Book container -->
 <div id="flipbook">
-  <div class="page">📖 Page 1<br><br>Bienvenue dans la Gazette Sky !</div>
-  <div class="page">🌠 Page 2<br><br>Découverte du royaume céleste...</div>
-  <div class="page">💫 Page 3<br><br>Secrets et aventures à suivre...</div>
-  <div class="page">🕊️ Page 4<br><br>À bientôt dans les nuages !</div>
+  <div class="page">📰 Page 1<br><br>Bienvenue dans la Gazette Sky !</div>
+  <div class="page">✨ Page 2<br><br>Explorez le royaume de la lumière...</div>
+  <div class="page">🌌 Page 3<br><br>Secrets anciens et aventures vous attendent.</div>
+  <div class="page">🕊️ Page 4<br><br>Merci d’avoir lu. À bientôt dans le ciel !</div>
 </div>
 
 <script>
-  $(document).ready(function () {
+  $(function() {
     $('#flipbook').turn({
-      width: 600,
-      height: 400,
-      autoCenter: true
+      width: 800,
+      height: 500,
+      autoCenter: true,
+      display: 'double',
+      acceleration: true,
+      gradients: true
     });
   });
 </script>
