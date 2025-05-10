@@ -2,17 +2,18 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Gazette Flipbook</title>
+  <title>Gazette FR</title>
 
-  <!-- jQuery must come first -->
+  <!-- jQuery d’abord -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Then Turn.js -->
+  <!-- puis Turn.js (depuis ton dossier js) -->
   <script src="js/turn.min.js"></script>
 
   <style>
     body {
       margin: 0;
-      background: #0a132b;
+      background: #ece6db;
+      font-family: 'Georgia', serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -20,43 +21,103 @@
       overflow: hidden;
     }
 
-    #flipbook {
-      width: 800px;
-      height: 500px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    #book-container {
+      position: relative;
     }
 
-    #flipbook .page {
-      width: 400px;
-      height: 500px;
-      background: white;
-      color: black;
-      padding: 30px;
+    #flipbook {
+      width: 1200px;
+      height: 800px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .page {
+      width: 600px;
+      height: 800px;
+      background: #fffef8 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      padding: 60px;
       box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-      font-size: 18px;
-      border: 1px solid #ccc;
+      color: #333;
+      border: 1px solid #d8d3c3;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.08);
+      border-radius: 4px;
+    }
+
+    .page h1, .page h2 {
+      margin-top: 0;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      background: #ffffffcc;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      color: #333;
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background: #fff;
+    }
+
+    .arrow-left {
+      left: -80px;
+    }
+
+    .arrow-right {
+      right: -80px;
     }
   </style>
 </head>
 <body>
 
-<div id="flipbook">
-  <div class="page">📰 Page 1<br><br>Bienvenue dans la Gazette Sky !</div>
-  <div class="page">✨ Page 2<br><br>Explorez le royaume de la lumière...</div>
-  <div class="page">🌌 Page 3<br><br>Secrets anciens et aventures vous attendent.</div>
-  <div class="page">🕊️ Page 4<br><br>Merci d’avoir lu. À bientôt dans le ciel !</div>
+<div id="book-container">
+  <!-- Arrows -->
+  <div class="arrow arrow-left" id="prev-page">←</div>
+  <div class="arrow arrow-right" id="next-page">→</div>
+
+  <!-- Flipbook pages -->
+  <div id="flipbook">
+    <div class="page"><h1>Gazette FR</h1><p>Cliquez sur la flèche pour ouvrir la Gazette !</p></div>
+    <div class="page"></div>
+    <div class="page"><h2>Chapitre 1</h2><p>Bienvenue dans le monde magique de Sky...</p></div>
+    <div class="page"><h2>Chapitre 2</h2><p>Les secrets du royaume céleste vous attendent.</p></div>
+    <div class="page"><h2>Chapitre 3</h2><p>Interview exclusive de notre guide étoilé !</p></div>
+    <div class="page"><h2>Chapitre 4</h2><p>À suivre dans le prochain numéro...</p></div>
+  </div>
 </div>
 
 <script>
   $(function() {
-    $('#flipbook').turn({
-      width: 800,
-      height: 500,
+    const $flipbook = $('#flipbook');
+
+    $flipbook.turn({
+      width: 1200,
+      height: 800,
       autoCenter: true,
-      display: 'double',
-      acceleration: true,
-      gradients: true
+      elevation: 50,
+      gradients: true,
+      duration: 1000,
+      page: 1, // start at the COVER
+      display: 'double'
+    });
+
+    $('#next-page').click(() => {
+      $flipbook.turn('next');
+    });
+
+    $('#prev-page').click(() => {
+      $flipbook.turn('previous');
     });
   });
 </script>
