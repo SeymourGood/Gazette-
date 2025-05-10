@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Gazette Book</title>
+
+  <!-- Load jQuery FIRST -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Load Turn.js from your local file -->
+  <script src="js/turn.min.js"></script>
+
   <style>
     body {
-      background: #151d2e;
+      margin: 0;
+      background: #1b2b47;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      overflow: hidden;
-      margin: 0;
     }
 
     #flipbook {
@@ -24,8 +29,8 @@
       height: 400px;
       background: white;
       color: black;
-      padding: 20px;
       font-family: sans-serif;
+      padding: 20px;
       box-sizing: border-box;
       border: 1px solid #ccc;
     }
@@ -33,18 +38,16 @@
 </head>
 <body>
 
+<!-- Book container -->
 <div id="flipbook">
-  <div class="page">📰 Page 1<br><br>Bienvenue dans la Gazette Sky !</div>
-  <div class="page">✨ Page 2<br><br>Le royaume de lumière vous attend...</div>
-  <div class="page">🌌 Page 3<br><br>Découvrez les secrets cachés...</div>
+  <div class="page">📖 Page 1<br><br>Bienvenue dans la Gazette Sky !</div>
+  <div class="page">🌠 Page 2<br><br>Découverte du royaume céleste...</div>
+  <div class="page">💫 Page 3<br><br>Secrets et aventures à suivre...</div>
   <div class="page">🕊️ Page 4<br><br>À bientôt dans les nuages !</div>
 </div>
 
-<!-- ✅ Load jQuery BEFORE turn.js -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="js/turn.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  $(document).ready(function () {
     $('#flipbook').turn({
       width: 600,
       height: 400,
