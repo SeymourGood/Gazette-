@@ -5,10 +5,9 @@
   <title>Gazette FR – Livre</title>
 
   <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Turn.js -->
-<script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Turn.js LOCAL -->
+  <script src="js/turn.min.js"></script>
 
   <style>
     body {
@@ -63,10 +62,10 @@
       font-size: 32px;
       color: #333;
       cursor: pointer;
-      z-index: 9999; /* 🔥 bien au-dessus de tout */
+      z-index: 9999;
       transition: background 0.3s;
       user-select: none;
-      pointer-events: all; /* 🔥 évite que ce soit "désactivé" */
+      pointer-events: all;
     }
 
     .arrow:hover {
@@ -127,4 +126,3 @@
 
 </body>
 </html>
-
