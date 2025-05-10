@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gazette Book</title>
+  <script src="js/turn.min.js"></script>
+  <style>
+    body {
+      background: #151d2e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #flipbook {
+      width: 600px;
+      height: 400px;
+    }
+
+    #flipbook .page {
+      width: 300px;
+      height: 400px;
+      background: white;
+      color: black;
+      padding: 20px;
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+<div id="flipbook">
+  <div class="page">📰 Page 1<br><br>Bienvenue dans la Gazette Sky !</div>
+  <div class="page">✨ Page 2<br><br>Le royaume de lumière vous attend...</div>
+  <div class="page">🌌 Page 3<br><br>Découvrez les secrets cachés...</div>
+  <div class="page">🕊️ Page 4<br><br>À bientôt dans les nuages !</div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    $("#flipbook").turn({
+      width: 600,
+      height: 400,
+      autoCenter: true
+    });
+  });
+</script>
+
+<!-- jQuery is required for turn.js -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>
