@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Gazette FR</title>
+  <title>Gazette FR – Livre</title>
 
   <!-- jQuery d’abord -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- puis Turn.js (depuis ton dossier js) -->
+  <!-- puis Turn.js -->
   <script src="js/turn.min.js"></script>
 
   <style>
@@ -26,14 +26,14 @@
     }
 
     #flipbook {
-      width: 1200px;
-      height: 800px;
+      width: 1400px;
+      height: 900px;
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
     }
 
     .page {
-      width: 600px;
-      height: 800px;
+      width: 700px;
+      height: 900px;
       background: #fffef8 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
       padding: 60px;
       box-sizing: border-box;
@@ -82,11 +82,11 @@
 <body>
 
 <div id="book-container">
-  <!-- Arrows -->
+  <!-- Flèches de navigation -->
   <div class="arrow arrow-left" id="prev-page">←</div>
   <div class="arrow arrow-right" id="next-page">→</div>
 
-  <!-- Flipbook pages -->
+  <!-- Livre interactif -->
   <div id="flipbook">
     <div class="page"><h1>Gazette FR</h1><p>Cliquez sur la flèche pour ouvrir la Gazette !</p></div>
     <div class="page"></div>
@@ -102,13 +102,13 @@
     const $flipbook = $('#flipbook');
 
     $flipbook.turn({
-      width: 1200,
-      height: 800,
+      width: 1400,
+      height: 900,
       autoCenter: true,
       elevation: 50,
       gradients: true,
       duration: 1000,
-      page: 1, // start at the COVER
+      page: 1,
       display: 'double'
     });
 
@@ -121,6 +121,10 @@
     });
   });
 </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
