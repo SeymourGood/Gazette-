@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Flipbook</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@4/turn.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #282c34;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #flipbook {
+      width: 800px;
+      height: 500px;
+    }
+    .page {
+      width: 400px;
+      height: 500px;
+      background: white;
+      border: 1px solid #aaa;
+      padding: 20px;
+      box-sizing: border-box;
+      font-family: sans-serif;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="flipbook">
+  <div class="page">Page 1<br>Cliquez pour tourner</div>
+  <div class="page">Page 2</div>
+  <div class="page">Page 3</div>
+  <div class="page">Page 4</div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('#flipbook').turn({
+      width: 800,
+      height: 500,
+      autoCenter: true,
+      display: 'double'
+    });
+  });
+</script>
+
+</body>
+</html>
