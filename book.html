@@ -11,74 +11,89 @@
 
   <style>
     body {
-      margin: 0;
-      background: #ece6db;
-      font-family: 'Georgia', serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
+  margin: 0;
+  background: #0b1021 url('https://cdn.pixabay.com/photo/2016/11/22/22/17/stars-1853485_960_720.jpg') repeat;
+  background-size: cover;
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    #book-container {
-      position: relative;
-    }
+#book-container {
+  position: relative;
+}
 
-    #flipbook {
-      width: 1400px;
-      height: 900px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-    }
+#flipbook {
+  width: 1400px;
+  height: 900px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
 
-    .page {
-      width: 700px;
-      height: 900px;
-      background: #fffef8 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
-      padding: 60px;
-      box-sizing: border-box;
-      color: #333;
-      border: 1px solid #d8d3c3;
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.08);
-      border-radius: 4px;
-    }
+.page {
+  width: 700px;
+  height: 900px;
+  padding: 60px;
+  box-sizing: border-box;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
 
-    .page h1, .page h2 {
-      margin-top: 0;
-    }
+/* 🎨 Couleurs mates variées */
+.page:nth-child(1) { background-color: #1e2a38; } /* intro */
+.page:nth-child(2) { background-color: #2d2b4e; } /* vide */
+.page:nth-child(3) { background-color: #3d435c; }
+.page:nth-child(4) { background-color: #4a3f57; }
+.page:nth-child(5) { background-color: #43524f; }
+.page:nth-child(6) { background-color: #3e4a66; }
 
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 60px;
-      height: 60px;
-      background: #ffffffcc;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 32px;
-      color: #333;
-      cursor: pointer;
-      z-index: 9999;
-      transition: background 0.3s;
-      user-select: none;
-      pointer-events: all;
-    }
+/* Titres & paragraphes */
+.page h1, .page h2 {
+  margin-top: 0;
+  color: #f2f2f2;
+}
 
-    .arrow:hover {
-      background: #fff;
-    }
+.page p {
+  line-height: 1.6;
+}
 
-    .arrow-left {
-      left: -80px;
-    }
+/* Flèches */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: #ffffff22;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 9999;
+  transition: background 0.3s;
+  user-select: none;
+  pointer-events: all;
+}
 
-    .arrow-right {
-      right: -80px;
-    }
+.arrow:hover {
+  background: #ffffff44;
+}
+
+.arrow-left {
+  left: -80px;
+}
+
+.arrow-right {
+  right: -80px;
+}
   </style>
 </head>
 <body>
